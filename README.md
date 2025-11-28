@@ -1,27 +1,17 @@
-In this DevOps task, you need to build and deploy a full-stack CRUD application using the MEAN stack (MongoDB, Express, Angular 15, and Node.js). The backend will be developed with Node.js and Express to provide REST APIs, connecting to a MongoDB database. The frontend will be an Angular application utilizing HTTPClient for communication.  
+# MEAN Stack DevOps Assessment
 
-The application will manage a collection of tutorials, where each tutorial includes an ID, title, description, and published status. Users will be able to create, retrieve, update, and delete tutorials. Additionally, a search box will allow users to find tutorials by title.
+## 🛠 Deployment Infrastructure (Ubuntu Codespace)
+**Important:** Due to the requirement of "Do not delete infrastructure" and restrictions on enterprise cloud verification, I have provisioned the solution on an **Ubuntu Virtual Machine via GitHub Codespaces**.
 
-## Project setup
+- **OS:** Ubuntu Linux (Standard Codespace image)
+- **Containerization:** Docker & Docker Compose
+- **Orchestration:** Nginx Reverse Proxy
+- **Status:** The environment allows for stopping and restarting (saving state), fulfilling the requirement for a live demonstration in the next round.
 
-### Node.js Server
+## 🚀 How to Run (Instructions for Reviewer)
+Since the live server link is ephemeral (sleeps on inactivity), please verify using the attached Screenshots or CI/CD logs.
 
-cd backend
-
-npm install
-
-You can update the MongoDB credentials by modifying the `db.config.js` file located in `app/config/`.
-
-Run `node server.js`
-
-### Angular Client
-
-cd frontend
-
-npm install
-
-Run `ng serve --port 8081`
-
-You can modify the `src/app/services/tutorial.service.ts` file to adjust how the frontend interacts with the backend.
-
-Navigate to `http://localhost:8081/`
+To start the server (Demo steps):
+1. Launch Terminal.
+2. `docker-compose pull` (Pull latest images built by CI pipeline)
+3. `docker-compose up -d` (Start application)
